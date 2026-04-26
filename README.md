@@ -25,6 +25,7 @@ cp -r skills/<skill-name> ~/.claude/skills/
 | `create-skill` | "create a skill", "make a new skill", "turn this into a command" |
 | `git-commit` | "commit my changes", "create a git commit", "commit this" |
 | `create-readme` | "create a readme", "write a readme", "document this project" |
+| `create-pr` | "create a pull request", "open a PR", "make a PR", "submit a PR" |
 
 ## Adding a new skill
 
