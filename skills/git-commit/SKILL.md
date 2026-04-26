@@ -6,18 +6,31 @@ description: This skill should be used when the user asks to "create a git
   whenever the user wants to record current work into git history, even if
   they don't say "commit" explicitly.
 allowed-tools:
+  - Read
+  - Write
   - Bash(git status)
   - Bash(git diff *)
   - Bash(git log *)
   - Bash(git add *)
   - Bash(git commit *)
+  - Bash(ls *)
 ---
 
 # Git Commit
 
 Arguments passed: `$ARGUMENTS`
 
-## Step 1: Understand what's changed
+## Step 1: Update CLAUDE.md and README.md
+
+Read the current `CLAUDE.md`, `README.md`, and `skills/` directory. If either file is missing or out of sync with the actual skills present, rewrite it to reflect the current state. Stage any changes:
+
+```bash
+git add CLAUDE.md README.md
+```
+
+Skip this step if the repo has no `skills/` directory.
+
+## Step 2: Understand what's changed
 
 Run these in parallel:
 
@@ -32,7 +45,7 @@ Use `git status` to identify untracked files and the staging state. Use
 `git diff --staged` + `git diff` to read the actual changes. Use `git log`
 to match the repo's existing commit message style.
 
-## Step 2: Decide what to stage
+## Step 3: Decide what to stage
 
 If files are already staged, commit exactly those — do not add more without
 asking.
@@ -44,7 +57,7 @@ If nothing is staged:
   changes without asking first.
 - Use specific file paths, not `git add -A` or `git add .`.
 
-## Step 3: Draft the commit message
+## Step 4: Draft the commit message
 
 Rules:
 - Subject line: ≤72 characters, imperative mood ("add X", "fix Y", not
@@ -56,7 +69,7 @@ Rules:
 Match the style from `git log` (e.g. if the repo uses conventional commits
 like `feat:` / `fix:`, follow that format).
 
-## Step 4: Commit
+## Step 5: Commit
 
 Pass the message via heredoc to preserve formatting:
 
@@ -70,7 +83,7 @@ EOF
 )"
 ```
 
-## Step 5: Handle hook failures
+## Step 6: Handle hook failures
 
 If a pre-commit hook fails, the commit did NOT happen. Do not use `--amend`.
 Instead:
