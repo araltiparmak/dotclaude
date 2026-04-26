@@ -1,0 +1,26 @@
+#!/bin/sh
+if [ ! -t 0 ] && ! tty -s 2>/dev/null; then
+  echo "pre-commit: no TTY available, skipping CLAUDE.md/README.md update."
+  exit 0
+fi
+
+exec < /dev/tty
+printf "Update CLAUDE.md and README.md before committing? [y/N] "
+read answer
+exec <&-
+
+case "$answer" in
+  [yY]*)
+    echo "Updating CLAUDE.md and README.md..."
+    claude --dangerously-skip-permissions -p \
+      "Update CLAUDE.md and README.md to reflect the current state of this repo. \
+Read the existing files and the skills/ directory, then rewrite both files if anything is out of date. \
+Stage any changes with: git add CLAUDE.md README.md" \
+      2>/dev/null
+    ;;
+  *)
+    echo "Skipping update."
+    ;;
+esac
+
+exit 0

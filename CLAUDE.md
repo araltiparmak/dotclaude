@@ -57,3 +57,4 @@ After creating a skill, add a line to this file under the **Installed skills** s
 - create-skill: Packages a workflow into a new reusable SKILL.md (`skills/create-skill/`)
 - git-commit: Creates a git commit — stages files, drafts a message, handles hook failures (`skills/git-commit/`)
 - create-readme: Writes or rewrites a README.md based on actual project content (`skills/create-readme/`)
+- create-pr: Creates a GitHub pull request — pushes branch, drafts title/body, returns PR URL (`skills/create-pr/`)
