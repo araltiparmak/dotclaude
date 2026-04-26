@@ -6,6 +6,8 @@ description: This skill should be used when the user asks to "create a
   Use it whenever the user wants to package repeatable Claude behavior
   into a SKILL.md file. Also use it for adjacent requests like "turn
   this into a command" or "save this workflow for later".
+model: claude-sonnet-4-6
+color: purple
 allowed-tools:
   - Read
   - Write
@@ -89,6 +91,11 @@ Don't create any subdirectory speculatively.
 ---
 name: <skill-name>          # what Claude reads; must match directory name
 description: <see below>
+model: claude-haiku-4-5-20251001  # optional: haiku for mechanical tasks,
+                                  # sonnet (default) for writing/reasoning,
+                                  # opus for high-stakes creative work
+color: green                # optional: green, blue, yellow, purple, red,
+                            # orange, cyan, pink — pick semantically
 allowed-tools:              # Claude Code tool permission patterns —
   - Read                    # whitelist only what this skill invokes.
   - Bash(git log *)         # Use specific patterns, not blanket Bash(*).

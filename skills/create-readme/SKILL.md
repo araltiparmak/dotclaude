@@ -5,6 +5,8 @@ description: This skill should be used when the user asks to "create a
   a readme for this project", or "document this project". Use it whenever
   the project is missing a README or the existing one needs a full rewrite,
   even if the user doesn't say "README" explicitly.
+model: claude-sonnet-4-6
+color: yellow
 allowed-tools:
   - Read
   - Write

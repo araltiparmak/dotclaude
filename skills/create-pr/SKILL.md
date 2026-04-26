@@ -4,6 +4,8 @@ description: This skill should be used when the user asks to "create a pull
   request", "open a PR", "make a PR", "submit a PR", "raise a PR", or
   "open a pull request". Use it whenever the user wants to propose changes
   for review on GitHub, even if they don't say "pull request" explicitly.
+model: claude-sonnet-4-6
+color: blue
 allowed-tools:
   - Bash(git status)
   - Bash(git log *)

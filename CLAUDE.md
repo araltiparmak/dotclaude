@@ -32,6 +32,8 @@ Every SKILL.md requires YAML frontmatter:
 ---
 name: <skill-name>       # must match directory name (kebab-case)
 description: <trigger>   # third-person, 3-8 quoted trigger phrases + "use it whenever..." clause
+model: claude-sonnet-4-6 # optional: haiku for mechanical tasks, sonnet (default), opus for high-stakes
+color: green             # optional: green, blue, yellow, purple, red, orange, cyan, pink
 allowed-tools:           # whitelist only tools this skill actually invokes
   - Read
   - Bash(git log *)      # use specific patterns, not blanket Bash(*)

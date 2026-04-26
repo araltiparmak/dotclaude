@@ -5,6 +5,8 @@ description: This skill should be used when the user asks to "create a git
   changes to git", "write a commit message", or "push a commit". Use it
   whenever the user wants to record current work into git history, even if
   they don't say "commit" explicitly.
+model: claude-haiku-4-5-20251001
+color: green
 allowed-tools:
   - Read
   - Write
