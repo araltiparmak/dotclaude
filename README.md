@@ -8,17 +8,16 @@ A skill is a `SKILL.md` that tells Claude how to handle a specific repeatable ta
 
 ## Using a skill
 
-**Option 1 — Clone as `~/.claude` (zero-copy setup)**
+**Option 1 — Symlink (recommended)**
 
-Clone the repo directly as your `~/.claude` directory. Since this repo's `skills/` folder maps to `~/.claude/skills/`, all skills are available across every project with no copying needed.
+Clone the repo anywhere and symlink its `skills/` folder into `~/.claude/`. Skills are available across all projects and stay in sync with `git pull` — no copying needed, existing `~/.claude` config stays untouched.
 
 ```bash
-git clone https://github.com/araltiparmak/skills.git ~/.claude
+git clone https://github.com/araltiparmak/skills.git ~/dev/skills
+ln -s ~/dev/skills/skills ~/.claude/skills
 ```
 
-> Only do this if `~/.claude` doesn't exist yet or you're happy to replace it. Back up any existing settings first.
-
-**Option 2 — Clone anywhere, copy skills manually**
+**Option 2 — Copy skills manually**
 
 Clone wherever you like, then copy individual skills into your project or user config:
 
