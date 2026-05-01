@@ -60,3 +60,4 @@ After creating a skill, add a line to this file under the **Installed skills** s
 - git-commit: Creates a git commit — stages files, drafts a message, handles hook failures (`skills/git-commit/`)
 - create-readme: Writes or rewrites a README.md based on actual project content (`skills/create-readme/`)
 - create-pr: Creates a GitHub pull request — pushes branch, drafts title/body, returns PR URL (`skills/create-pr/`)
+- git-push: Pushes the current branch to a remote — handles new branches, warns on main, surfaces common errors (`skills/git-push/`)
