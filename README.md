@@ -1,4 +1,4 @@
-# dotclaude
+# skills
 
 Personal Claude Code skills — reusable workflows packaged as `SKILL.md` files that Claude picks up automatically.
 
