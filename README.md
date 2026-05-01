@@ -13,8 +13,8 @@ A skill is a `SKILL.md` that tells Claude how to handle a specific repeatable ta
 Clone the repo anywhere and symlink its `skills/` folder into `~/.claude/`. Skills are available across all projects and stay in sync with `git pull` — no copying needed, existing `~/.claude` config stays untouched.
 
 ```bash
-git clone https://github.com/araltiparmak/skills.git ~/dev/skills
-ln -s ~/dev/skills/skills ~/.claude/skills
+git clone https://github.com/araltiparmak/skills.git <path/to/skills>
+ln -s <path/to/skills>/skills ~/.claude/skills
 ```
 
 **Option 2 — Copy skills manually**
